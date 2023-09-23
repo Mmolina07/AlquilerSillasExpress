@@ -1,8 +1,7 @@
 from datetime import datetime
 from silla import Silla
-from usuario import Usuario
 from tarifas import Tarifas
-from sistemaalquiler import SistemaAlquiler
+from usuario import Usuario
 
 class SistemaAlquiler:
     def __init__(self):
@@ -10,12 +9,14 @@ class SistemaAlquiler:
         self.usuarios = []
         self.transacciones = []
         self.tarifas = Tarifas()
+        self.cantidad_sillas_disponibles = 0
         self.registrar_sillas_disponibles()
 
     def registrar_silla(self, numero_serie, modelo, tarifa_por_hora):
         silla = Silla(numero_serie, modelo)
         self.tarifas.agregar_tarifa(numero_serie, tarifa_por_hora)
         self.sillas.append(silla)
+        self.cantidad_sillas_disponibles += 1
 
     def registrar_sillas_disponibles(self):
         seriales_disponibles = ["S001", "S002", "S003", "S004", "S005", "S006", "S007", "S008", "S009", "S010"]
