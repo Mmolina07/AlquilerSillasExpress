@@ -1,4 +1,3 @@
-import tkinter as tk
 inventario_informales = 800
 inventario_formales = 400
 precio_silla_informal = 1500
@@ -89,6 +88,7 @@ def seleccionar_paquete():
         print(f"Compra exitosa. Quedan {inventario_informales} sillas informales y {inventario_formales} sillas formales en inventario.")
     else:
         print("Compra cancelada.")
+
 
 def devolver_sillas():
     global inventario_informales, inventario_formales
