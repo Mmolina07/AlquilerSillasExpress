@@ -1,8 +1,5 @@
 import tkinter as tk
 
-def applicationSupportsSecureRestorableState() -> bool:
-    return True
-
 inventario_informales = 800
 inventario_formales = 400
 precio_silla_informal = 1500
@@ -68,13 +65,16 @@ def seleccionar_paquete():
     
     precio_total = calcular_precio(cantidad, tipo_silla)
     precio_label.config(text=f"El precio total es: ${precio_total}")
-    
+
+
 def devolver_sillas():
     tipo_silla = tipo_silla_devolver_var.get()
     cantidad = int(cantidad_devolver_var.get())
     
     if tipo_silla == "Informal":
+        
         inventario_informales += cantidad
+
     else:
         inventario_formales += cantidad
     
