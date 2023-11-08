@@ -124,3 +124,5 @@ def main():
             break
         else:
             print("Opción no válida")
+
+main()
